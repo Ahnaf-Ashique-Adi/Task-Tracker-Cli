@@ -7,32 +7,30 @@ class Task
     private String status;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
-
+// This is the constructor for the TAsks
     Task(int id,String description)
     {
-        this.id=setId(id);
-        this.description=setDescription(description);
-        
-
-
+        this.id=id;
+        this.description=description;
+        this.status="To do";
+        this.createdAt=LocalDateTime.now();
+        this.updatedAt=this.createdAt;
     }
+    //Getter methds 
     public int getId() {
         return id;
     }
-    public int setId(int id) {
-        this.id = id;
-        return id;
-    }
-    public String getDescription()
-    {
+    public String getDescription() {
         return description;
-
     }
-    public String setDescription(String st)
-    {
-        this.description=st;
-        return description;
-
+    public String getStatus() {
+        return status;
+    }
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+    public LocalDateTime getUpdatedAt() {
+        return updatedAt;
     }
 
 }
