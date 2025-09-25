@@ -12,7 +12,7 @@ class Task
     {
         this.id=id;
         this.description=description;
-        this.status="To do";
+        this.status="to do";
         this.createdAt=LocalDateTime.now();
         this.updatedAt=this.createdAt;
     }
@@ -32,5 +32,29 @@ class Task
     public LocalDateTime getUpdatedAt() {
         return updatedAt;
     }
+    //This are the setter methods 
+    public void setDescription(String description)
+    {
+        this.description=description;
+        this.updatedAt=LocalDateTime.now();
+    }
+    public void setStatus(String status)
+    {
+        this.status=status;
+        this.updatedAt=LocalDateTime.now();
+    }
+    public void markInProgress()
+    {
+        setStatus("in-progress");
+    }
+    public void markDone()
+    {
+        setStatus("done");
+    }
+    public void reset()
+    {
+        setStatus("to do");
+    }
+
 
 }
