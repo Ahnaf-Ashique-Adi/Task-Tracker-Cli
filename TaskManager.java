@@ -49,6 +49,13 @@ class TaskManager
         }
         public void Update(int id, String newDescription)
         {
+            for( int j = 0;j<this.size;j++)
+            {
+                if(tasks[j].getId()==id)
+                {
+
+                }
+            }
 
         }
         public void Delete(int id)
