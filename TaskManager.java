@@ -32,9 +32,60 @@ class TaskManager
         {
             System.out.println("Error"+e.getMessage());
         }
+       
+
 
 
     }
+     public void add(String description)
+        { 
+            int newId= size+1;
+            Task newTask= new Task(newId, description);
+            tasks[size]=newTask;
+            size++;
+            saveToFile();
+
+
+        }
+        public void Update(int id, String newDescription)
+        {
+
+        }
+        public void Delete(int id)
+        {
+
+        }
+        public void listTask()
+        {
+
+        }
+        public void listDone()
+        {
+
+        }
+        public void listNotDone()
+        {
+
+        }
+        public void listInProgress()
+        {
+
+        }
+        public void saveToFile()
+        {
+            try
+            {
+                FileWriter writer = new FileWriter(file);
+                writer.write("[");
+                for(int i=0;i<size)
+                
+            }
+            catch (Exception e)
+            {
+                // TODO: handle exception
+                System.out.println("Error"+e.getMessage());
+            }
+        }
 
 
     
