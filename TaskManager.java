@@ -77,7 +77,26 @@ class TaskManager
             {
                 FileWriter writer = new FileWriter(file);
                 writer.write("[");
-                for(int i=0;i<size)
+                for(int i=0;i<size,i++)
+                {
+                    Task task= tasks[i];//access kortesi array theke task gula ke and raktesi task e 
+                    //anar pore Json akare format korbo
+                    String json ="{"
+                    +"\"id\": "+task.getId()+", "
+                    +"\"description\": \""+ task.getDescription()+"\","
+                    + "\"status\": \"" + task.getStatus() + "\", "
+                    + "\"createdAt\": \"" + task.getCreatedAt() + "\", "
+                    + "\"updatedAt\": \"" + task.getUpdatedAt() + "\""
+                    + "}";
+                    writer.write(json);
+                    if(i<size-1)
+                    {
+                        writer.write(",")
+                    }
+
+                }
+                writer.write("]");
+                write.close();
                 
             }
             catch (Exception e)
