@@ -68,6 +68,23 @@ class TaskManager
         public void delete(int id)
         {
 
+            for(int i=0;i<size;i++)
+            {
+                if(tasks[i]!=null && tasks[i].getId()==id)
+                {
+                    for(int j=i;j<size-1;j++)
+                    {
+                        tasks[j]=tasks[j+1];
+                    }
+
+                }
+
+                tasks[size-1]=null;
+                size--;
+                System.out.println("Task deleted");
+                return;
+            }
+
         }
         public void listTask()
         {
