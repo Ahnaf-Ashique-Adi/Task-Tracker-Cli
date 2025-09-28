@@ -47,18 +47,25 @@ class TaskManager
 
 
         }
-        public void Update(int id, String newDescription)
+        public void update(int id, String newDescription)
         {
             for( int j = 0;j<this.size;j++)
             {
-                if(tasks[j].getId()==id)
+                if(tasks[j]!=null && tasks[j].getId()==id)
                 {
+                    tasks[j].setDescription(newDescription);
+                    saveToFile();
+                    System.out.println("Task Updated (ID: "+id+")");
+                    return;
 
                 }
+
             }
+            System.out.println("Task not found (ID: "+id+")");
+
 
         }
-        public void Delete(int id)
+        public void delete(int id)
         {
 
         }
@@ -84,7 +91,7 @@ class TaskManager
             {
                 FileWriter writer = new FileWriter(file);
                 writer.write("[");
-                for(int i=0;i<size,i++)
+                for(int i=0;i<size;i++)
                 {
                     Task task= tasks[i];//access kortesi array theke task gula ke and raktesi task e 
                     //anar pore Json akare format korbo
@@ -98,12 +105,12 @@ class TaskManager
                     writer.write(json);
                     if(i<size-1)
                     {
-                        writer.write(",")
+                        writer.write(",");
                     }
 
                 }
                 writer.write("]");
-                write.close();
+                writer.close();
                 
             }
             catch (Exception e)
