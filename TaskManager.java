@@ -76,18 +76,25 @@ class TaskManager
                     {
                         tasks[j]=tasks[j+1];
                     }
+                    tasks[size-1]=null;
+                    size--;
+                    System.out.println("Task deleted");
+                    return;
 
                 }
 
-                tasks[size-1]=null;
-                size--;
-                System.out.println("Task deleted");
-                return;
+                
             }
+            System.out.println("Task not found");
+
 
         }
         public void listTask()
         {
+            for(int i=0;i<size;i++)
+            {
+                System.out.println("ID: "+tasks[i].getId()+" | "+);
+            }
 
         }
         public void listDone()
