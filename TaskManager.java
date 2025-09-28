@@ -91,10 +91,24 @@ class TaskManager
         }
         public void listTask()
         {
-            for(int i=0;i<size;i++)
+            if(size==0)
             {
-                System.out.println("ID: "+tasks[i].getId()+" | "+);
+                System.out.println("No tasks to list");
             }
+            else
+            {
+                for(int i=0;i<size;i++)
+            {
+                System.out.println("ID: "+tasks[i].getId()+
+                " | Description: "+tasks[i].getDescription()+
+                " | Status: "     +tasks[i].getStatus()+
+                " | CreatedAt: "  +tasks[i].getCreatedAt()+
+                " | UpdatedAt: "  +tasks[i].getUpdatedAt());
+                System.out.println("--------------------------------------");
+            }
+
+            }
+            
 
         }
         public void listDone()
