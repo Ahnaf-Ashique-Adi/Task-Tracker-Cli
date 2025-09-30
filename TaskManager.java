@@ -113,7 +113,26 @@ class TaskManager
         }
         public void listDone()
         {
-
+            if(size==0)
+            {
+                System.out.println("Task not found");
+            }
+            else
+            {
+                for(int i=0;i<size;i++)
+                {
+                    if(tasks[i].getClass().equals("done"))
+                    {
+                        System.out.println("ID: "+tasks[i].getId()+
+                        " | Description: "+tasks[i].getDescription()+
+                        " | Status: "     +tasks[i].getStatus()+
+                        " | CreatedAt: "  +tasks[i].getCreatedAt()+
+                        " | UpdatedAt: "  +tasks[i].getUpdatedAt());
+                        System.out.println("--------------------------------------");
+                    }
+                }
+            }
+          
         }
         public void listNotDone()
         {
