@@ -56,5 +56,4 @@ class Task
         setStatus("to do");
     }
 
-
 }

@@ -121,7 +121,7 @@ class TaskManager
             {
                 for(int i=0;i<size;i++)
                 {
-                    if(tasks[i].getClass().equals("done"))
+                    if(tasks[i].getStatus().equals("done"))
                     {
                         System.out.println("ID: "+tasks[i].getId()+
                         " | Description: "+tasks[i].getDescription()+
@@ -144,7 +144,7 @@ class TaskManager
             {
                 for(int i=0;i<size;i++)
                 {
-                    if(tasks[i].getClass().equals("to do"))
+                    if(tasks[i].getStatus().equals("to do"))
                     {
                         System.out.println("ID: "+tasks[i].getId()+
                         " | Description: "+tasks[i].getDescription()+
@@ -167,7 +167,7 @@ class TaskManager
             {
                 for(int i=0;i<size;i++)
                 {
-                    if(tasks[i].getClass().equals("in-progress"))
+                    if(tasks[i].getStatus().equals("in-progress"))
                     {
                         System.out.println("ID: "+tasks[i].getId()+
                         " | Description: "+tasks[i].getDescription()+
